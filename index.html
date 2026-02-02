@@ -55,9 +55,10 @@
 
         // 2. 資産の内訳（ここを今の気分の比率に変える！）
         const portfolioData = {
-            jpStock: 50,   // 日本株の比率
-            usStock: 30,   // 米国株の比率
-            cash: 20       // 現金の比率      
+            jpStock: 35,   // 日本株の比率
+            usStock: 35,   // 米国株の比率
+            trust: 29,     // 投資信託
+            cash: 1       // 現金の比率      
         };
 
         // 3.日付
@@ -82,6 +83,7 @@
                     backgroundColor: [
                         '#ff9a9e', // 日本株の色（ピンク系）
                         '#a18cd1', // 米国株の色（紫系）
+                        '#fad0c4', // ★投資信託（ピーチ色）
                         '#e0c3fc'  // 現金の色（薄紫）
                     ],
                     borderWidth: 0
