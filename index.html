@@ -77,13 +77,13 @@
         new Chart(ctx, {
             type: 'doughnut', // 'pie'にすると普通の円グラフになります
             data: {
-                labels: ['日本株', '米国株', '現金・他'],
+                labels: ['日本株', '米国株', '投資信託', '現金・他'],
                 datasets: [{
                     data: [portfolioData.jpStock, portfolioData.usStock, portfolioData.cash],
                     backgroundColor: [
                         '#ff9a9e', // 日本株の色（ピンク系）
                         '#a18cd1', // 米国株の色（紫系）
-                        '#fad0c4', // ★投資信託（ピーチ色）
+                        '#fad0c4', // 投資信託（ピーチ色）
                         '#e0c3fc'  // 現金の色（薄紫）
                     ],
                     borderWidth: 0
