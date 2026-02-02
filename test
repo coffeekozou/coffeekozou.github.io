@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>こぞうの投資LAB</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; color: #333; }
+        .container { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { text-align: center; font-size: 24px; margin-bottom: 10px; }
+        h2 { font-size: 18px; margin-top: 30px; margin-bottom: 15px; border-left: 5px solid #ff9a9e; padding-left: 10px; }
+        p.desc { text-align: center; font-size: 14px; color: #666; margin-bottom: 30px; }
+
+        /* メーターのデザイン */
+        .meter-box { background: #fff; margin-bottom: 20px; }
+        .bar-bg { background: #eee; border-radius: 20px; height: 24px; width: 100%; position: relative; overflow: hidden; }
+        .bar-fill { background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%); height: 100%; width: 0%; transition: width 1.5s ease-in-out; }
+        .percent-text { text-align: right; font-weight: bold; color: #e91e63; margin-top: 5px; }
+
+        /* 円グラフの調整 */
+        .chart-container { position: relative; height: 300px; width: 100%; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>☕ こぞうの投資ラボ</h1>
+        <p class="desc">アメブロの制限から解き放たれた実験場</p>
+        
+        <h2>目標達成率</h2>
+        <div class="meter-box">
+            <div class="bar-bg">
+                <div id="bar-fill" class="bar-fill"></div>
+            </div>
+            <div class="percent-text">現在 <span id="percent-val">0</span>% 達成！</div>
+        </div>
+
+        <h2>現在のポートフォリオ</h2>
+        <div class="chart-container">
+            <canvas id="myPieChart"></canvas>
+        </div>        
+    </div>
+
+    <script>
+        // ==========================================
+        // ★ ここで数字を管理します（更新時はここをいじる）
+        // ==========================================
+        
+        // 1. 進捗率（％）
+        const currentPercent = 28.0;
+
+        // 2. 資産の内訳（ここを今の気分の比率に変える！）
+        const portfolioData = {
+            jpStock: 50,   // 日本株の比率
+            usStock: 30,   // 米国株の比率
+            cash: 20       // 現金の比率      
+        };
+
+        // ==========================================
+        // 以下は、画面を表示するためのプログラム（触らなくてOK）
+        // ==========================================
+
+        // メーターの更新
+        document.getElementById('bar-fill').style.width = currentPercent + '%';
+        document.getElementById('percent-val').innerText = currentPercent.toFixed(1);
+
+        // 円グラフの描画
+        const ctx = document.getElementById('myPieChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut', // 'pie'にすると普通の円グラフになります
+            data: {
+                labels: ['日本株', '米国株', '現金・他'],
+                datasets: [{
+                    data: [portfolioData.jpStock, portfolioData.usStock, portfolioData.cash],
+                    backgroundColor: [
+                        '#ff9a9e', // 日本株の色（ピンク系）
+                        '#a18cd1', // 米国株の色（紫系）
+                        '#e0c3fc'  // 現金の色（薄紫）
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' } // 凡例を下に表示
+                }
+            }
+        });
+        
+    </script>
+</body>
+</html>
