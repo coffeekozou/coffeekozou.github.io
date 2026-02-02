@@ -71,6 +71,9 @@
         document.getElementById('bar-fill').style.width = currentPercent + '%';
         document.getElementById('percent-val').innerText = currentPercent.toFixed(1);
 
+        // 日付
+        document.getElementById('update-date').innerText = updateDate;        
+
         // 円グラフの描画
         const ctx = document.getElementById('myPieChart').getContext('2d');
         new Chart(ctx, {
@@ -94,10 +97,6 @@
                     legend: { position: 'bottom' } // 凡例を下に表示
                 }
             }
-
-         // 日付
-        document.getElementById('update-date').innerText = updateDate;
-            
         });
     </script>
 </body>
