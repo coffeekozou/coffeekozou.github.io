@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>こぞうの投資LAB | 資産管理＆実験場</title>
-    <meta name="description" content="元Webデザイナーこぞうの資産運用実験場。GitHubで作った自作ツールで資産を見える化しています。">
+    <meta name="description" content="こぞうの資産運用実験場。GitHubで作った自作ツールで資産を見える化しています。">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* 全体の設定 */
         body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif; margin: 0; padding: 0; background-color: #f5f7fa; color: #333; }
         
-        /* ヘッダー（ナビゲーション） */
+        /* ヘッダー */
         header { background-color: #fff; padding: 15px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: bold; font-size: 18px; color: #333; text-decoration: none; display: flex; align-items: center; }
         .nav-links { display: flex; gap: 20px; }
         .nav-links a { text-decoration: none; color: #666; font-size: 14px; transition: color 0.3s; }
         .nav-links a:hover { color: #e91e63; }
-        .nav-links a.active { color: #e91e63; font-weight: bold; }
         
         /* スマホ用メニュー調整 */
         @media (max-width: 600px) {
@@ -27,6 +26,11 @@
         /* メインコンテンツ */
         .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
         
+        /* ▼ 新規追加：挨拶エリアのデザイン */
+        .welcome-box { text-align: center; margin-bottom: 40px; color: #555; }
+        .welcome-box h1 { font-size: 24px; margin-bottom: 10px; color: #333; }
+        .welcome-box p { font-size: 14px; line-height: 1.6; }
+
         section { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 30px; }
         h2 { font-size: 18px; margin-top: 0; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid #ff9a9e; color: #444; }
 
@@ -49,7 +53,7 @@
     <header>
         <a href="#" class="logo">☕ こぞうの投資LAB</a>
         <nav class="nav-links">
-            <a href="#" class="active">ホーム</a>
+            <a href="#">ホーム</a>
             <a href="#portfolio">PFグラフ</a>
             <a href="#" onclick="alert('準備中です！')">金・Gold</a> 
             <a href="https://ameblo.jp/furuicamera/" target="_blank">ブログ ➡</a>
@@ -57,6 +61,12 @@
     </header>
 
     <div class="container">
+        
+        <div class="welcome-box">
+            <h1>👋 ようこそ、投資実験室へ</h1>
+            <p>ここはアメブロの制限から解き放たれた、個人的な資産管理ページです。<br>
+            コーヒーでも飲みながら、ゆるりと数字を眺めています。</p>
+        </div>
         
         <section id="goal">
             <h2>目標達成率</h2>
@@ -74,7 +84,7 @@
             <p class="last-updated">最終更新：<span id="update-date"></span></p>
         </section>
 
-        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 Coffeekozou Investment Lab.</p>
@@ -82,7 +92,7 @@
 
     <script>
         // ==========================================
-        // ★ 数字の管理（今まで通りここをいじるだけ！）
+        // ★ 数字の管理
         // ==========================================
         const currentPercent = 28.0; 
         const updateDate = "2026/02/02";
@@ -98,12 +108,10 @@
         // 描画プログラム
         // ==========================================
 
-        // メーター更新
         document.getElementById('bar-fill').style.width = currentPercent + '%';
         document.getElementById('percent-val').innerText = currentPercent.toFixed(1);
         document.getElementById('update-date').innerText = updateDate;
 
-        // 円グラフ描画
         const ctx = document.getElementById('myPieChart').getContext('2d');
         new Chart(ctx, {
             type: 'doughnut',
@@ -121,7 +129,7 @@
                 plugins: {
                     legend: {
                         position: 'bottom',
-                        labels: { padding: 20 }
+                        labels: { padding: 30 }
                     }
                 }
             }
