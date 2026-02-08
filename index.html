@@ -23,15 +23,28 @@
             .nav-links { gap: 15px; font-size: 12px; }
         }
 
-        /* メインコンテンツ */
-        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
-        
-        /* ▼ 新規追加：挨拶エリアのデザイン */
-        .welcome-box { text-align: center; margin-bottom: 40px; color: #555; }
-        .welcome-box h1 { font-size: 24px; margin-bottom: 10px; color: #333; }
-        .welcome-box p { font-size: 14px; line-height: 1.6; }
+        /* ▼▼ ヒーローヘッダー（画像エリア） ▼▼ */
+        .hero {
+            /* ここで画像のURLを指定します */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* 画像の高さ */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: -30px; /* 下のコンテンツに少し重ねる */
+            padding-bottom: 30px;
+        }
+        .hero-content h1 { font-size: 28px; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 16px; opacity: 0.9; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
 
-        section { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 30px; }
+        /* メインコンテンツ */
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 10; }
+        
+        section { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 30px; }
         h2 { font-size: 18px; margin-top: 0; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid #ff9a9e; color: #444; }
 
         /* メーターのデザイン */
@@ -44,7 +57,6 @@
         
         /* フッター */
         footer { text-align: center; padding: 20px; color: #aaa; font-size: 12px; margin-top: 50px; }
-        .last-updated { margin-top: 10px; font-size: 11px; }
 
     </style>
 </head>
@@ -60,13 +72,15 @@
         </nav>
     </header>
 
-    <div class="container">
-        
-        <div class="welcome-box">
+    <div class="hero">
+        <div class="hero-content">
             <h1>👋 ようこそ、投資実験室へ</h1>
-            <p>ここはアメブロの制限から解き放たれた、個人的な資産管理ページです。<br>
+            <p>アメブロの制限から解き放たれた、自由な資産管理ページ。<br>
             コーヒーでも飲みながら、ゆるりと数字を眺めています。</p>
         </div>
+    </div>
+
+    <div class="container">
         
         <section id="goal">
             <h2>目標達成率</h2>
@@ -81,7 +95,7 @@
             <div class="chart-container">
                 <canvas id="myPieChart"></canvas>
             </div>
-            <p class="last-updated">最終更新：<span id="update-date"></span></p>
+            <p style="text-align: right; font-size: 11px; color: #aaa; margin-top: 10px;">最終更新：<span id="update-date"></span></p>
         </section>
 
     </div>
@@ -94,7 +108,7 @@
         // ==========================================
         // ★ 数字の管理
         // ==========================================
-        const currentPercent = 75.0; 
+        const currentPercent = 28.0; 
         const updateDate = "2026/02/02";
         
         const portfolioData = {
