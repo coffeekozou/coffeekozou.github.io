@@ -148,3 +148,39 @@ h2 {
     margin-top: 10px;
     text-align: left;
 }
+
+/* スマホ（画面幅600px以下）用の調整 */
+@media (max-width: 600px) {
+    /* 全体の余白を少し詰める */
+    .container {
+        padding: 15px;
+    }
+
+    /* ロゴとメニューをスッキリさせる */
+    header {
+        padding: 10px;
+        flex-direction: column; /* 縦並びに */
+        gap: 10px;
+    }
+    nav ul {
+        gap: 10px;
+        font-size: 0.8rem; /* メニューの文字を少し小さく */
+    }
+
+    /* 大きすぎる見出しを調整 */
+    h1 {
+        font-size: 1.4rem !important;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    /* グラフや画像が窮屈にならないように調整 */
+    .photo-gallery {
+        gap: 15px;
+    }
+    .photo-item {
+        min-width: 100%; /* スマホでは1枚ずつ縦に並べる */
+    }
+}
