@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP2E3FYR2S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TP2E3FYR2S');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>なないろまーぶる | こぞうの投資LAB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* コレクションページ専用の追加スタイル */
+        :root {
+            --bg-antique: #f2ede4; /* 少し古びた紙のようなベージュ */
+            --accent-wood: #8d6e63; /* 木の棚のような茶色 */
+        }
+        body { background-color: var(--bg-antique); }
+        
+        .collection-card {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #e0d9ce;
+        }
+        .collection-card:hover { transform: translateY(-5px); }
+        
+        .item-photo {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .item-info { padding: 20px; text-align: left; }
+        .category-tag {
+            font-size: 0.7rem;
+            color: #fff;
+            background-color: var(--accent-wood);
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <a href="../index.html" class="logo">☕ こぞうの投資LAB</a>
+    <nav>
+        <ul>
+            <li><a href="../index.html">ホーム</a></li>
+            <li><a href="../stocks.html">銘柄図鑑</a></li>
+            <li><a href="../gold-comparison.html">金・Gold</a></li>
+            <li><a href="https://ameblo.jp/furuicamera" target="_blank">ブログ ➡</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main class="container" style="text-align: center;">
+        <h1>なないろまーぶる</h1>
+        <p class="sub-text">Old but Gold. こぞうの愛すべきガラクタたち。</p>
+
+        <h2>New Favorites</h2>
+        <div class="stock-grid">
+            <div class="collection-card">
+                <div class="item-photo">🐸</div> <div class="item-info">
+                    <span class="category-tag">キャラクター</span>
+                    <h3 style="margin: 0 0 10px 0;">ケロネンケロ</h3>
+                    <p style="font-size: 0.85rem; color: #666;">
+                        最近仲間入りしたカエルくん。この何とも言えない表情に癒やされます。
+                    </p>
+                </div>
+            </div>
+            </div>
+
+        <h2 style="margin-top: 60px;">Corporate Novelties</h2>
+        <div class="stock-grid">
+            <div class="collection-card">
+                <div class="item-photo">💊</div>
+                <div class="item-info">
+                    <span class="category-tag">ノベルティ</span>
+                    <h3 style="margin: 0 0 10px 0;">サトちゃん</h3>
+                    <p style="font-size: 0.85rem; color: #666;">
+                        薬局の店先でおなじみの。昔のノベルティは作りがしっかりしていて大好きです。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <a href="index.html" class="btn">トップページへ戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kozou's Investment Lab.</p>
+        <p><a href="privacy.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">プライバシーポリシー</a></p>
+    </footer>
+</body>
+</html>
