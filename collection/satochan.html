@@ -11,13 +11,12 @@
     
     <link rel="stylesheet" href="../style.css">
     <style>
-        /* コレクションページ専用の微調整 */
         body { 
             font-family: 'Zen Maru Gothic', sans-serif;
-            background-color: #f2ede4; /* アンティークベージュ */
+            background-color: #f2ede4; 
         }
         .tag {
-            background-color: #8d6e63; /* 木の棚のような茶色 */
+            background-color: #8d6e63; 
             color: white;
             padding: 2px 8px;
             border-radius: 4px;
@@ -29,6 +28,12 @@
             color: #888;
             border-top: 1px dotted #ccc;
             padding-top: 5px;
+        }
+        /* 画像の高さを揃えて綺麗に見せるための調整 */
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -65,7 +70,48 @@
                 </div>
             </div>
 
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>ランドセルサトちゃん</h2>
+                    <span class="tag">貯金箱</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img src="images/sato_02_front.jpg" alt="ランドセルサトちゃん">
+                    </div>
+                    <p>眉毛の個体差が激しく、中には「ケンシロウ」のような強面も（笑）。靴の裏にはMODERN PLASTICS JAPANの刻印があります。</p>
+                    <div class="memo">入手：2002年</div>
+                </div>
             </div>
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>ドクターサトちゃん</h2>
+                    <span class="tag">20世紀ファイナル</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img src="images/sato_03_front.jpg" alt="ドクターサトちゃん">
+                    </div>
+                    <p>20世紀ファイナルカーニバルのもの。当時はニセモノも存在しましたが、本物はやっぱり造形がしっかりしています。</p>
+                    <div class="memo">入手：2003年</div>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>サトちゃん指人形</h2>
+                    <span class="tag">原点</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-container">
+                        <img src="images/sato_04_front.jpg" alt="指人形">
+                    </div>
+                    <p>私が一番最初に手にした思い出のサトちゃん。1992年春のカーニバル。この下がり眉毛がなんとも言えず可愛いんです。</p>
+                    <div class="memo">入手：1992年</div>
+                </div>
+            </div>
+        </div>
 
         <div style="margin-top: 50px; text-align: center;">
             <a href="index.html" class="btn">コレクション一覧へ戻る</a>
