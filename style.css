@@ -180,3 +180,20 @@ h2 {
         min-width: 100%; /* スマホでは1枚ずつ縦に並べる */
     }
 }
+/* ★追加：コレクション画像を横並びにする設定 */
+        .collection-images {
+            display: flex;
+            justify-content: center; /* 中央に寄せる */
+            gap: 20px;               /* 画像同士の間隔 */
+            margin: 40px auto;       /* 上下の余白 */
+            max-width: 600px;        /* 全体の最大幅 */
+            flex-wrap: wrap;         /* スマホでは縦並びにする */
+        }
+        .collection-images img {
+            width: 150px;            /* 画像の横幅 */
+            height: 150px;           /* 画像の縦幅（正方形にする場合） */
+            object-fit: cover;       /* 正方形に綺麗に収める */
+            border-radius: 50%;      /* 丸くする（四角が良い場合は削除OK） */
+            border: 5px solid #fff;  /* 白い枠線 */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 影をつけて立体的に */
+}
