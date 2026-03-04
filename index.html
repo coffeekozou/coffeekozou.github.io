@@ -16,8 +16,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     
     <style>
         .hero {
@@ -57,7 +57,14 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">☕ こぞうの投資LAB</a>
+        <a href="index.html" class="logo">          
+          <svg class="flask-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <path d="M30,80 L70,80 L55,45 L45,45 Z" fill="#4CAF50" />
+          <path d="M40,15 L60,15 L60,40 L85,85 A5,5 0 0,1 80,95 L20,95 A5,5 0 0,1 15,85 L40,40 Z" fill="none" stroke="#333" stroke-width="6" stroke-linejoin="round"/>
+          <line x1="35" y1="15" x2="65" y2="15" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="45" cy="70" r="4" fill="#FFFFFF" />
+          </svg>こぞうの投資LAB
+        </a>
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
@@ -69,12 +76,16 @@
     </header>
 
     <div class="hero">
-        <h1>投資実験室へようこそ</h1>
-        <p>投資初心者こぞうの資産管理ページです。</p>
+        <h1>投資実験室</h1>
+        <p>投資初心者（3年弱）こぞうの資産管理ページです。株式投資、純金積立など。<br>
+           実際に試したものの感想や、目標金額到達まであとどれぐらいか割合を公開しています。<br>
+           保有銘柄も公開しています。NISAもしています。
+        </p>
     </div>
 
     <section id="investment-floor">
         <h2>Investment Portfolio</h2>
+        <p class="sub- text">今年の目標資産額までの達成率と保有割合です。</p>
         <div class="chart-wrapper">
             <canvas id="myPieChart"></canvas>
             <div class="chart-center-text">
@@ -89,12 +100,12 @@
             <div class="legend-item"><span class="legend-color" style="background:#d1c4e9;"></span>現金・他</div>
         </div>
         <p style="font-size: 0.9rem; color: #999; margin-bottom: 30px;">(最終更新: 2026/02/02)</p>
-        <a href="https://ameblo.jp/furuicamera" target="_blank" class="btn">投資ブログを読む ✏️</a>
+        <a href="stocks.html" class="btn">保有銘柄はこちら ➡</a>
     </section>
 
     <section id="collection-floor">
         <h2>なないろまーぶる</h2>
-        <p class="sub-text">Old but Gold. 懐かしい昭和レトロなフィギュアたち</p>
+       <p class="sub- text">Old but Gold. 懐かしい昭和レトロなフィギュアたち</p>
         
         <div class="collection-images">
             <img src="collection/images/satochan_top.png" alt="サトちゃん">
@@ -102,8 +113,9 @@
             <!--<img src="collection3.jpg" alt="レトロな看板"> -->
         </div>
         <p style="font-size: 0.9rem; color: #888; margin-bottom: 30px;">
-            サトちゃん、ピョンちゃん、いろんな企業のフィギュアなど、十数年振りにリニューアルしました。<br>
-            最近購入したフィギュアも載せています。
+            サトちゃん、ピョンちゃん、いろんな企業のフィギュアなど。<br>
+            旧サイトからの移植です。<br>
+            最近購入した、作家さんのフィギュアなども載せています。
         </p>
 
         <a href="collection/index.html" class="btn">コレクションの部屋へ ➡</a>

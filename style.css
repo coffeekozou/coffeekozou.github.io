@@ -197,3 +197,9 @@ h2 {
             border: 5px solid #fff;  /* 白い枠線 */
             box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 影をつけて立体的に */
 }
+.flask-icon {
+  width: 1.2em;   /* 文字より少し大きいくらいに自動調整 */
+  height: 1.2em;
+  vertical-align: middle; /* 文字の高さに合わせる */
+  margin-right: 8px;      /* 文字との間に少し隙間を作る */
+}
