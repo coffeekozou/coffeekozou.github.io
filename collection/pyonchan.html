@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP2E3FYR2S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TP2E3FYR2S');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ピョンちゃん - なないろまーぶる | こぞうの投資LAB</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+<style>
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background-color: #f2ede4;
+        }
+
+        .tag {
+            background-color: #8d6e63;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .memo {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px dotted #ccc;
+            padding-top: 8px;
+        }
+
+        /* --- 魔法を解く：図鑑ページ専用のカード設定 --- */
+        .stock-grid {
+            display: block !important; /* グリッド（横並び）を解除して、カードを1枚ずつ縦に積む */
+        }
+
+        .stock-card {
+            display: block !important; /* 縦固定を解除 */
+            max-width: 100% !important;
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* PC（画面幅768px以上）で「写真と文章」を横に並べる */
+        @media (min-width: 768px) {
+            .card-body {
+                display: flex !important;
+                gap: 40px;
+                align-items: flex-start;
+            }
+            .image-section { flex: 0 0 280px; }
+            .text-section { flex: 1; }
+        }
+
+        /* --- 画像ギャラリーの調整 --- */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 250px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .sub-images {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .sub-images img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .sub-images img:hover {
+            border-color: #8d6e63;
+        }
+
+        /* --- 文章エリア --- */
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: left;
+            margin: 0 0 15px 0;
+        }
+
+        .card-header {
+            margin-bottom: 20px;
+        }
+
+        .card-header h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            font-weight: 700;
+            color: #5d4037;
+            border-bottom: none; /* 下線を一旦消してスッキリさせる */
+        }
+    </style></head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">☕ こぞうの投資LAB</a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="index.html">コレクションTOP</a></li>
+                <li><a href="https://ameblo.jp/furuicamera" target="_blank">ブログ ➡</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 class="page-title">ピョンちゃん コレクション</h1>
+            <p class="sub-text">Old but Gold. 薬局の店頭を彩ったマスコットたち。</p>
+        </div>
+
+        <div class="stock-grid">
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>アンプルピョンちゃん</h2>
+                    <span class="tag">置物</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-section">
+                        <div class="image-gallery">
+                            <div class="main-image">
+                                <img src="images/pyon_01_front.png" alt="正面" id="main-01">
+                            </div>
+                            <div class="sub-images">
+                                <img src="images/pyon_01_front.png" alt="正面" onclick="document.getElementById('main-01').src=this.src">
+                                <img src="images/pyon_01_back.png" alt="背面" onclick="document.getElementById('main-01').src=this.src">
+                                <img src="images/pyon_01_up.png" alt="タグ" onclick="document.getElementById('main-01').src=this.src">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-section">
+                        <div class="description">
+                            3代目（1963-1967）のピョンちゃんです。約5cm。手にアンプルを持っている様子です。<br>
+                            総合強肝シグナル胃腸薬、と書いてあります。 たまに新シグナル内服液にお世話になっているのですが、 
+                            随分古くからあるお薬のようで驚きました。 昔はアンプルに入っていたのですね。
+                        </div>
+                        <div class="memo">入手：？</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>アンプルピョンちゃん</h2>
+                    <span class="tag">置物</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-section">
+                        <div class="image-gallery">
+                            <div class="main-image">
+                                <img src="images/pyon_02_front.png" alt="正面" id="main-02">
+                            </div>
+                            <div class="sub-images">
+                                <img src="images/pyon_02_front.png" alt="正面" onclick="document.getElementById('main-02').src=this.src">
+                                <img src="images/pyon_02_back.png" alt="背面" onclick="document.getElementById('main-02').src=this.src">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-section">
+                        <div class="description">
+                            アンプルピョンちゃんその2。3代目（1963-1967）のピョンちゃんの別バージョン。
+                        </div>
+                        <div class="memo">入手：？</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>シェイクハンドピョンちゃん</h2>
+                    <span class="tag">置物</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-section">
+                        <div class="image-gallery">
+                            <div class="main-image">
+                                <img src="images/pyon_03_front.png" alt="正面" id="main-03">
+                            </div>
+                            <div class="sub-images">
+                                <img src="images/pyon_03_front.png" alt="正面" onclick="document.getElementById('main-03').src=this.src">
+                                <img src="images/pyon_03_back.png" alt="背面" onclick="document.getElementById('main-03').src=this.src">
+                                <img src="images/pyon_03_up.png" alt="アップ" onclick="document.getElementById('main-03').src=this.src">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-section">
+                        <div class="description">
+                            4代目（1967-1972）のピョンちゃん。<br>
+                            シェイクハンドピョンちゃんとも呼ばれています。<br>
+                            握手しているように見えます。約13㎝<br>
+                            「エスエス」の文字。顔と体はスプレーで描かれているようです。
+                        </div>
+                        <div class="memo">入手：2006年</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <a href="index.html" class="btn">コレクション一覧へ戻る</a>
+        </div>
+    </main>
+
+    <footer style="margin-top: 80px; padding: 40px 20px;">
+        <p style="font-size: 0.8rem; letter-spacing: 0.05em; color: #aaa;">
+            &copy; 2026 Kozou's Investment Lab. — なないろまーぶる Since 2008
+        </p>
+        <p><a href="privacy.html" style="color: #ccc; text-decoration: none; font-size: 0.7rem;">プライバシーポリシー</a></p>
+    </footer>
+</body>
+</html>
