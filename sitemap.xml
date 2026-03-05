@@ -16,7 +16,6 @@
     <loc>https://kozou-lab.com/privacy.html</loc>
     <priority>0.5</priority>
   </url>
-
   <url>
     <loc>https://kozou-lab.com/collection/index.html</loc>
     <priority>0.8</priority>
@@ -29,4 +28,19 @@
     <loc>https://kozou-lab.com/collection/pyonchan.html</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+  <loc>https://kozou-lab.com/about.html</loc>
+  <priority>0.7</priority>
+  <url>
+  <loc>https://kozou-lab.com/contact.html</loc>
+  <priority>0.5</priority>
+  </url>
+  <url>
+  <loc>https://kozou-lab.com//collection/others.html</loc>
+  <priority>0.8</priority>
+  </url>
+
+
+
+</url>
 </urlset>
