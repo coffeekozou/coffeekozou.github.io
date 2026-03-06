@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TP2E3FYR2S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TP2E3FYR2S');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サトちゃん - なないろまーぶる | こぞうの投資LAB</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            background-color: #f2ede4;
+        }
+
+        .tag {
+            background-color: #8d6e63;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .memo {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px dotted #ccc;
+            padding-top: 8px;
+        }
+
+        /* --- 魔法を解く：図鑑ページ専用のカード設定 --- */
+        .stock-grid {
+            display: block !important; /* グリッド（横並び）を解除して、カードを1枚ずつ縦に積む */
+        }
+
+        .stock-card {
+            display: block !important; /* 縦固定を解除 */
+            max-width: 100% !important;
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* PC（画面幅768px以上）で「写真と文章」を横に並べる */
+        @media (min-width: 768px) {
+            .card-body {
+                display: flex !important;
+                gap: 40px;
+                align-items: flex-start;
+            }
+            .image-section { flex: 0 0 280px; }
+            .text-section { flex: 1; }
+        }
+
+        /* --- 画像ギャラリーの調整 --- */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 250px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .sub-images {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .sub-images img {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .sub-images img:hover {
+            border-color: #8d6e63;
+        }
+
+        /* --- 文章エリア --- */
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #444;
+            text-align: left;
+            margin: 0 0 15px 0;
+        }
+
+        .card-header {
+            margin-bottom: 20px;
+        }
+
+        .card-header h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            font-weight: 700;
+            color: #5d4037;
+            border-bottom: none; /* 下線を一旦消してスッキリさせる */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">          
+          <svg class="flask-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <path d="M30,80 L70,80 L55,45 L45,45 Z" fill="#4CAF50" />
+          <path d="M40,15 L60,15 L60,40 L85,85 A5,5 0 0,1 80,95 L20,95 A5,5 0 0,1 15,85 L40,40 Z" fill="none" stroke="#333" stroke-width="6" stroke-linejoin="round"/>
+          <line x1="35" y1="15" x2="65" y2="15" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="45" cy="70" r="4" fill="#FFFFFF" />
+          </svg>こぞうの投資LAB
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">ホーム</a></li>
+                <li><a href="index.html">コレクションTOP</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="https://ameblo.jp/furuicamera" target="_blank">ブログ ➡</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h1 class="page-title">昭和レトログッズ その1</h1>
+            <p class="sub-text">Old but Gold. 昔なつかしいもの集めました。納めきれなかったものたち</p>
+        </div>
+
+        <div class="stock-grid">
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>コルゲンコーワのカエル</h2>
+                    <span class="tag">フィギュア</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-section">
+                        <div class="image-gallery">
+                            <div class="main-image">
+                                <img src="images/others_01_front.png" alt="正面" id="main-01">
+                            </div>
+                            <div class="sub-images">
+                                <img src="images/others_01_front.png" alt="正面" onclick="document.getElementById('main-01').src=this.src">
+                                <img src="images/others_01_back.png" alt="背面" onclick="document.getElementById('main-01').src=this.src">
+                                <img src="images/others_01_side.png" alt="コルゲンのカエルの指人形" onclick="document.getElementById('main-01').src=this.src">
+                                <img src="images/others_01_up.png" alt="街角のコルゲンカエル" onclick="document.getElementById('main-01').src=this.src">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-section">
+                        <div class="description">
+                            オークションで譲っていただいたり奈良のおもちゃ屋さんで購入したり。結構汚れていたので掃除したら美しくなりました。<br>
+                            このカエルのほか、座ったものなどもあります。コルゲン、と言ったらこのカエル。シンプルでかわいいですね！<br>
+                            今では見かけなくなってしまったけれど、街角にいたカエルも。
+                        </div>
+                        <div class="memo">入手：1999年</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>ケロちゃんコロちゃん</h2>
+                    <span class="tag">フィギュア</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-section">
+                        <div class="image-gallery">
+                            <div class="main-image">
+                                <img src="images/others_02_front.png" alt="正面" id="main-02">
+                            </div>
+                            <div class="sub-images">
+                                <img src="images/others_02_front.png" alt="正面" onclick="document.getElementById('main-02').src=this.src">
+                                <img src="images/others_02_back.png" alt="背面" onclick="document.getElementById('main-02').src=this.src">
+                                <img src="images/others_02_up.png" alt="ケロちゃんコロちゃん指人形" onclick="document.getElementById('main-02').src=this.src">
+                                <img src="images/others_02_side.png" alt="コロちゃん拡大" onclick="document.getElementById('main-02').src=this.src">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-section">
+                        <div class="description">
+                            薬局でレジの横にいるのをよく見かけます。コロちゃんは薬を買ったときにおまけで付いていました。ケロちゃんは、頂き物です。<br>
+                            旗を持って立っているバージョンもあります。名古屋のおもちゃ屋さん、オークションなどでそれぞれ入手。<br>
+                        </div>
+                        <div class="memo">入手：2002年</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>ゼリアちゃん</h2>
+                    <span class="tag">指人形</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-section">
+                        <div class="image-gallery">
+                            <div class="main-image">
+                                <img src="images/others-03_front.png" alt="ゼリアちゃん指人形" id="main-03">
+                            </div>
+                            <div class="sub-images">
+                                <img src="images/others-03_front.png" alt="ゼリアちゃん指人形" onclick="document.getElementById('main-03').src=this.src">
+                                <img src="images/others-03_1_front.png" alt="新ゼリアちゃん" onclick="document.getElementById('main-03').src=this.src">
+                                <img src="images/others-03_1_back.png" alt="新ゼリアちゃん背面" onclick="document.getElementById('main-03').src=this.src">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-section">
+                        <div class="description">
+                            ゼリア新薬旧ゼリアちゃん指人形（2003年頃入手）<br>
+                            硬質のソフビ。フォントがレトロでかわいい。気に入っています。<br>
+                            2005年に新しいゼリアちゃんにモデルチェンジしました。<br>
+                            軟質のソフビ。細かいところまで凝っている感じがします。<br>
+                            年齢、性別は不明。子くま座の中心にあるゼリア星からやってきました。<br>
+                            趣味はエプロン集め、料理など。ヘルスケアアドバイザーの資格を取るため薬局でアルバイト中。<br>
+                            -公式ウェブページ・ゼリアちゃんのへやより-<br>
+                            ゼリアちゃんは宇宙熊だったんだ･･･宇宙船に乗っている姿とか、見てみたい気がします。
+                        </div>
+                        <div class="memo">入手：2003年、2005年</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stock-card">
+                <div class="card-header">
+                    <h2>ミオ</h2>
+                    <span class="tag">フィギュア</span>
+                </div>
+                <div class="card-body">
+                    <div class="image-section">
+                        <div class="image-gallery">
+                            <div class="main-image">
+                                <img src="images/others-04_front.png" alt="ミオＤコーワのミオちゃん" id="main-04">
+                            </div>
+                            <div class="sub-images">
+                                <img src="images/others-04_front.png" alt="ミオＤコーワのミオちゃん" onclick="document.getElementById('main-04').src=this.src">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-section">
+                        <div class="description">
+                            ミオＤコーワのミオちゃん<br>
+                            にんにく頭が不思議！・・・ほんとうに不思議・・・<br>
+                            にんにく成分が多く含まれている商品なので、きっとこんなキャラクターになってしまったんでしょうね。
+                        </div>
+                        <div class="memo">入手：？</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div style="margin-top: 50px; text-align: center;">
+            <a href="index.html" class="btn">コレクション一覧へ戻る</a>
+        </div>
+    </main>
+
+    <footer style="margin-top: 80px; padding: 40px 20px;">
+        <p style="font-size: 0.8rem; letter-spacing: 0.05em; color: #aaa;">
+            &copy; 2026 Kozou's Investment Lab. — なないろまーぶる Since 2008
+        </p>
+
+　　　　　<p>
+        <a href="../privacy.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">プライバシーポリシー</a>
+        <span style="color: #ccc; margin: 0 8px;">|</span>
+        <a href="../about.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">運営者情報</a>
+        <span style="color: #ccc; margin: 0 8px;">|</span>
+        <a href="../contact.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">お問い合わせ</a>
+        </p>
+
+    </footer>
+</body>
+</html>
