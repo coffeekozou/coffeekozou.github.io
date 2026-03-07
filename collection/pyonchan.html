@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">   
-<style>
+    <style>
         body {
             font-family: 'Zen Maru Gothic', sans-serif;
             background-color: #f2ede4;
@@ -41,13 +41,12 @@
             padding-top: 8px;
         }
 
-        /* --- 魔法を解く：図鑑ページ専用のカード設定 --- */
         .stock-grid {
-            display: block !important; /* グリッド（横並び）を解除して、カードを1枚ずつ縦に積む */
+            display: block !important;
         }
 
         .stock-card {
-            display: block !important; /* 縦固定を解除 */
+            display: block !important;
             max-width: 100% !important;
             margin-bottom: 40px;
             background: #fff;
@@ -56,7 +55,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* PC（画面幅768px以上）で「写真と文章」を横に並べる */
         @media (min-width: 768px) {
             .card-body {
                 display: flex !important;
@@ -67,7 +65,6 @@
             .text-section { flex: 1; }
         }
 
-        /* --- 画像ギャラリーの調整 --- */
         .image-gallery {
             display: flex;
             flex-direction: column;
@@ -115,7 +112,6 @@
             border-color: #8d6e63;
         }
 
-        /* --- 文章エリア --- */
         .description {
             font-size: 0.95rem;
             line-height: 1.8;
@@ -133,13 +129,24 @@
             margin: 0;
             font-weight: 700;
             color: #5d4037;
-            border-bottom: none; /* 下線を一旦消してスッキリさせる */
+            border-bottom: none;
         }
-    </style></head>
+
+        /* 広告用デザイン：レトロな背景に合わせた余白 */
+        .ad-row {
+            margin: 40px auto;
+            max-width: 728px;
+            min-height: 90px;
+            text-align: center;
+        }
+    </style>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9452786854049940"
+     crossorigin="anonymous"></script>
+</head>
 
 <body>
     <header>
-
         <a href="../index.html" class="logo">          
           <svg class="flask-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
           <path d="M30,80 L70,80 L55,45 L45,45 Z" fill="#4CAF50" />
@@ -164,6 +171,16 @@
             <p class="sub-text">Old but Gold. 薬局の店頭を彩ったマスコットたち。
             <br>English version is under construction. Please stay tuned!
             </p>
+        </div>
+
+        <div class="ad-row">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9452786854049940"
+                 data-ad-slot="YOUR_SLOT_ID_PYON_1"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
         <div class="stock-grid">
@@ -223,6 +240,16 @@
                         <div class="memo">入手：？</div>
                     </div>
                 </div>
+            </div>
+
+            <div class="ad-row">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9452786854049940"
+                     data-ad-slot="YOUR_SLOT_ID_PYON_2"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
 
             <div class="stock-card">
@@ -377,9 +404,16 @@
                 </div>
             </div>
 
+        </div>
 
-
-
+        <div class="ad-row">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9452786854049940"
+                 data-ad-slot="YOUR_SLOT_ID_PYON_3"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
 
         <div style="margin-top: 50px; text-align: center;">
@@ -391,15 +425,13 @@
         <p style="font-size: 0.8rem; letter-spacing: 0.05em; color: #aaa;">
             &copy; 2026 Kozou's Investment Lab. — なないろまーぶる Since 2008
         </p>
-
-　　　　　<p>
-        <a href="../privacy.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">プライバシーポリシー</a>
-        <span style="color: #ccc; margin: 0 8px;">|</span>
-        <a href="../about.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">運営者情報</a>
-        <span style="color: #ccc; margin: 0 8px;">|</span>
-        <a href="../contact.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">お問い合わせ</a>
+        <p>
+            <a href="../privacy.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">プライバシーポリシー</a>
+            <span style="color: #ccc; margin: 0 8px;">|</span>
+            <a href="../about.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">運営者情報</a>
+            <span style="color: #ccc; margin: 0 8px;">|</span>
+            <a href="../contact.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">お問い合わせ</a>
         </p>
-
     </footer>
 </body>
 </html>
