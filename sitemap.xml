@@ -66,6 +66,11 @@
     <loc>https://kozou-lab.com/collection/others_6.html</loc>
     <priority>0.8</priority>
   </url>
+    <url>
+    <loc>https://kozou-lab.com/collection/modern-figures.html</loc>
+    <priority>0.8</priority>
+  </url>
+
 
   <url>
     <loc>https://kozou-lab.com/about.html</loc>
