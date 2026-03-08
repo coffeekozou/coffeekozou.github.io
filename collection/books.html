@@ -12,7 +12,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サトちゃん - なないろまーぶる | こぞうの投資LAB</title>
+    <meta name="description" content="なないろまーぶるのマスコット収集において参考にさせていただいた関連書籍の紹介。『非売品グラフィティ』や『ペコちゃんBook』など、昭和レトロな企業ノベルティの歴史や謎解きの手助けとなった大切な本たちを記録。">
+    <meta property="og:site_name" content="なないろまーぶる/My Favorite Mascots | こぞうの投資LAB">
+    <title>コレクション関連書籍 - なないろまーぶる | こぞうの投資LAB</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,13 +44,13 @@
             padding-top: 8px;
         }
 
-        /* --- 魔法を解く：図鑑ページ専用のカード設定 --- */
+        /* --- 図鑑ページ専用のカード設定 --- */
         .stock-grid {
-            display: block !important; /* グリッド（横並び）を解除して、カードを1枚ずつ縦に積む */
+            display: block !important;
         }
 
         .stock-card {
-            display: block !important; /* 縦固定を解除 */
+            display: block !important;
             max-width: 100% !important;
             margin-bottom: 40px;
             background: #fff;
@@ -57,7 +59,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* PC（画面幅768px以上）で「写真と文章」を横に並べる */
         @media (min-width: 768px) {
             .card-body {
                 display: flex !important;
@@ -68,7 +69,6 @@
             .text-section { flex: 1; }
         }
 
-        /* --- 画像ギャラリーの調整 --- */
         .image-gallery {
             display: flex;
             flex-direction: column;
@@ -116,7 +116,6 @@
             border-color: #8d6e63;
         }
 
-        /* --- 文章エリア --- */
         .description {
             font-size: 0.95rem;
             line-height: 1.8;
@@ -134,7 +133,6 @@
             margin: 0;
             font-weight: 700;
             color: #5d4037;
-            border-bottom: none; /* 下線を一旦消してスッキリさせる */
         }
     </style>
 
@@ -158,12 +156,18 @@
                 <li><a href="../index.html">ホーム</a></li>
                 <li><a href="index.html">コレクションTOP</a></li>
                 <li><a href="../about.html">About</a></li>
-                <li><a href="https://ameblo.jp/furuicamera" target="_blank">ブログ ➡</a></li>
+                <li><a href="https://peko88.seesaa.net/" target="_blank">ブログ ➡</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
+        <nav class="breadcrumb" style="font-size: 0.8rem; margin: 10px 0 20px 0; color: #888; text-align: left;">
+            <a href="../index.html" style="color: inherit; text-decoration: none;">ホーム</a> &nbsp;&gt;&nbsp;
+            <a href="index.html" style="color: inherit; text-decoration: none;">コレクションTOP</a> &nbsp;&gt;&nbsp;
+            関連書籍
+        </nav>
+
         <div style="text-align: center; margin-bottom: 40px;">
             <h1 class="page-title">コレクション関連書籍</h1>
             <p class="sub-text">情報として参考にした書籍</p>
@@ -196,10 +200,8 @@
                             どんなものが存在するのか、集める際大変参考になりました。
                             <br>
                             何故こんなものが生まれたのか、謎解きの手引きにもなりました。
-                            <br>
-                            （2005年入手。）
                         </div>
-                        <div class="memo">入手：2001年</div>
+                        <div class="memo">入手：2005年</div>
                     </div>
                 </div>
             </div>
@@ -217,7 +219,7 @@
                             </div>
                             <div class="sub-images">
                                 <img src="images/retoro_book_02.png" alt="ペコちゃんBookPekoBooK" onclick="document.getElementById('main-02').src=this.src">
-                                <img src="images/retoro_book_02_back.png" alt="ペコちゃんBookPekoBooK背面" onclick="document.getElementById('main-02').src=this.src">
+                                <img src="images/retoro_book_02_back.png" alt="ペコちゃんBookPekoBooK背面" onclick="document.getElementById('main-01').src=this.src">
                             </div>
                         </div>
                     </div>
