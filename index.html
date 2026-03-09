@@ -12,7 +12,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:site_name" content="こぞうの投資LAB">
+    <meta property="og:image" content="https://kozou-lab.com/collection/images/ogp_main.png">
     <title>こぞうの投資LAB</title>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,39 +35,18 @@
         }
         .hero h1 { font-size: 2.2rem; margin: 0 0 15px 0; letter-spacing: 0.05em; }
         .hero p { font-size: 1rem; color: #ccc; line-height: 1.8; margin: 0; }
-
-        .chart-wrapper { 
-            position: relative; width: 300px; height: 300px; margin: 40px auto; 
-        }
-        .chart-center-text {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            text-align: center; width: 100%; pointer-events: none;
-        }
-        .chart-label { font-size: 0.9rem; color: #777; font-weight: bold; margin-bottom: 5px; }
-        .chart-value { font-size: 2.2rem; font-weight: bold; color: var(--accent-color); line-height: 1; }
-
-        .custom-legend {
-            display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;
-            margin-bottom: 40px; font-size: 0.9rem; color: #5d4037;
-        }
-        .legend-item { display: flex; align-items: center; gap: 6px; }
-        .legend-color { width: 12px; height: 12px; border-radius: 50%; }
-
-        section { padding: 60px 20px; text-align: center; }
-        #investment-floor { background-color: var(--bg-investment); }
-        #collection-floor { background-color: var(--bg-collection); }
     </style>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9452786854049940"
      crossorigin="anonymous"></script>
 
-     <script type="application/ld+json">
+    <script type="application/ld+json">
       {
        "@context": "https://schema.org",
        "@type": "WebSite",
        "name": "こぞうの投資LAB",
        "url": "https://kozou-lab.com/",
-       "description": "3年の投資投資初心者『こぞう』が、パランティアや日本株、純金積立などを独自視点で分析する投資研究所。",
+       "description": "3年の投資初心者『こぞう』が、パランティアや日本株、純金積立などを独自視点で分析する投資研究所。",
        "publisher": {
        "@type": "Organization",
        "name": "こぞうの投資LAB",
@@ -80,16 +61,15 @@
       }
       }
     </script>
-<meta property="og:image" content="https://kozou-lab.com/collection/images/ogp_main.png">
 </head>
 <body>
     <header>
         <a href="index.html" class="logo">          
           <svg class="flask-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-          <path d="M30,80 L70,80 L55,45 L45,45 Z" fill="#4CAF50" />
-          <path d="M40,15 L60,15 L60,40 L85,85 A5,5 0 0,1 80,95 L20,95 A5,5 0 0,1 15,85 L40,40 Z" fill="none" stroke="#333" stroke-width="6" stroke-linejoin="round"/>
-          <line x1="35" y1="15" x2="65" y2="15" stroke="#333" stroke-width="6" stroke-linecap="round"/>
-          <circle cx="45" cy="70" r="4" fill="#FFFFFF" />
+            <path d="M30,80 L70,80 L55,45 L45,45 Z" fill="#4CAF50" />
+            <path d="M40,15 L60,15 L60,40 L85,85 A5,5 0 0,1 80,95 L20,95 A5,5 0 0,1 15,85 L40,40 Z" fill="none" stroke="#333" stroke-width="6" stroke-linejoin="round"/>
+            <line x1="35" y1="15" x2="65" y2="15" stroke="#333" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="45" cy="70" r="4" fill="#FFFFFF" />
           </svg>こぞうの投資LAB
         </a>
         <nav>
@@ -105,56 +85,69 @@
     <div class="hero">
         <h1>投資実験室</h1>
         <p>投資初心者（3年弱）こぞうの資産管理ページです。株式投資、純金積立など。<br>
-           実際に試したものの感想や、目標金額到達まであとどれぐらいか割合を公開しています。<br>
-           保有銘柄も公開しています。NISAもしています。
+           保有銘柄や、目標金額までの達成率を公開しています。
         </p>
+    </div>
+
+    <div class="ad-row">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9452786854049940" data-ad-slot="★ID1★" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
     <section id="investment-floor">
         <h2>Investment Portfolio</h2>
-        <p class="sub- text">今年の目標資産額までの達成率と保有割合</p>
+        <p class="sub-text">今年の目標資産額までの達成率と保有割合</p>
         <div class="chart-wrapper">
             <canvas id="myPieChart"></canvas>
             <div class="chart-center-text">
-                <div class="chart-label">目標達成率</div>
+                <div class="chart-label" style="font-size: 0.9rem; color: #777; font-weight: bold; margin-bottom: 5px;">目標達成率</div>
                 <div class="chart-value">75.0%</div>
             </div>
         </div>
-        <div class="custom-legend">
-            <div class="legend-item"><span class="legend-color" style="background:#ef9a9a;"></span>日本株</div>
-            <div class="legend-item"><span class="legend-color" style="background:#b39ddb;"></span>米国株</div>
-            <div class="legend-item"><span class="legend-color" style="background:#ffccbc;"></span>投資信託</div>
-            <div class="legend-item"><span class="legend-color" style="background:#d1c4e9;"></span>現金・他</div>
+        <p style="font-size: 0.9rem; color: #999;">(最終更新: 2026/02/02)</p>
+        </section>
+
+        <section id="research-floor">
+        <h2>保有株一覧</h2>
+        <p class="sub-text">日本株、米国株、投資信託など</p>
+
+        <div class="ad-row" style="background-color: rgba(255, 255, 255, 0.4); border: 1px dashed #607d8b; margin: 30px auto;">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9452786854049940" data-ad-slot="★ID2★" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
-        <p style="font-size: 0.9rem; color: #999; margin-bottom: 30px;">(最終更新: 2026/02/02)</p>
-        <a href="stocks.html" class="btn">保有銘柄はこちら ➡</a>
+
+        <div style="max-width: 650px; margin: 0 auto 30px auto; color: #666; line-height: 1.8;">
+            <p>
+                日本株、米国株、投資信託などの保有銘柄を一覧にまとめています。<br>
+                銘柄の独自分析も行っています。分析結果はこれからも増えます。
+            </p>
+        </div>
+        
+        <a href="stocks.html" class="btn">保有株はこちら ➡</a>
     </section>
 
     <section id="collection-floor">
         <h2>なないろまーぶる</h2>
-       <p class="sub- text">Old but Gold. <br>懐かしい昭和レトロなフィギュアたち</p>
-        
-        <div class="collection-images">
+        <p class="sub-text">Old but Gold. <br>懐かしい昭和レトロなフィギュアたち</p>
+        <div class="collection-images" style="margin: 30px auto;">
             <img src="collection/images/satochan_top.png" alt="サトちゃん">
         </div>
         <p style="font-size: 0.9rem; color: #888; margin-bottom: 30px;">
             サトちゃん、ピョンちゃん、いろんな企業のフィギュアなど。<br>
-            旧サイトからの移植です。<br>
-            最近購入した、作家さんのフィギュアなども載せています。
+            旧サイトからの移植です。作家さんのフィギュアなども載せています。
         </p>
-
         <a href="collection/index.html" class="btn">コレクションの部屋へ ➡</a>
     </section>
 
     <footer>
-    <p>&copy; 2026 Kozou's Investment Lab.</p>
-    <p>
-        <a href="privacy.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">プライバシーポリシー</a>
-        <span style="color: #ccc; margin: 0 8px;">|</span>
-        <a href="about.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">運営者情報</a>
-        <span style="color: #ccc; margin: 0 8px;">|</span>
-        <a href="contact.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">お問い合わせ</a>
-    </p>
+        <p>&copy; 2026 Kozou's Investment Lab.</p>
+        <p>
+            <a href="privacy.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">プライバシーポリシー</a>
+            <span style="color: #ccc; margin: 0 8px;">|</span>
+            <a href="about.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">運営者情報</a>
+            <span style="color: #ccc; margin: 0 8px;">|</span>
+            <a href="contact.html" style="color: #aaa; text-decoration: none; font-size: 0.7rem;">お問い合わせ</a>
+        </p>
     </footer>
 
     <script>
@@ -166,19 +159,10 @@
                 datasets: [{
                     data: [50, 30, 20, 10], 
                     backgroundColor: ['#ef9a9a', '#b39ddb', '#ffccbc', '#d1c4e9'], 
-                    borderWidth: 2,
-                    borderColor: '#fff0f5',
-                    hoverOffset: 4
+                    borderWidth: 2, borderColor: '#fff', hoverOffset: 4
                 }]
             },
-            options: {
-                cutout: '70%',
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: false }
-                },
-                maintainAspectRatio: false
-            }
+            options: { cutout: '70%', plugins: { legend: { display: false } }, maintainAspectRatio: false }
         });
     </script>
 </body>

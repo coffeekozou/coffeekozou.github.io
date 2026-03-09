@@ -2,6 +2,7 @@
 :root {
     --hero-height: 350px;
     --bg-investment: #f6f5ee; 
+    --bg-research: #eef2f5;   /* 🌟 新設：リサーチ用ブルーグレー */
     --bg-collection: #dee2e2; 
     --text-color: #5d4037;
     --accent-color: #d35400;
@@ -25,11 +26,10 @@ header {
 .logo { font-size: 1.4rem; font-weight: bold; text-decoration: none; color: var(--text-color); display: flex; align-items: center; gap: 8px; }
 nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
 nav a { text-decoration: none; color: #888; font-weight: bold; transition: 0.3s; }
-nav a:hover { color: var(--accent-color); 
-}
+nav a:hover { color: var(--accent-color); }
 
 /* 共通フッター */
-footer { text-align: center; padding: 30px; background: #fff; color: #aaa; font-size: 0.8rem; }
+footer { text-align: center; padding: 40px; background: #fff; color: #aaa; font-size: 0.8rem; }
 
 /* 共通ボタン（btnクラス） */
 .btn {
@@ -41,7 +41,7 @@ footer { text-align: center; padding: 30px; background: #fff; color: #aaa; font-
 }
 .btn:hover { transform: translateY(-2px); border-color: var(--accent-color); color: var(--accent-color); }
 
-/* --- 図鑑・比較ページ用の追加スタイル --- */
+/* --- 基本レイアウト --- */
 .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 h2 {
     font-size: 1.8rem; 
@@ -51,15 +51,40 @@ h2 {
     padding-bottom: 10px;
 }
 
+/* 🌟 各セクションの色分け */
+section { padding: 60px 20px; text-align: center; }
+#investment-floor { background-color: var(--bg-investment); }
+#research-floor { background-color: var(--bg-research); }
+#collection-floor { background-color: var(--bg-collection); }
+
+/* 🌟 広告用：ガタつき防止（CLS）対策 */
+.ad-row {
+    margin: 40px auto;
+    max-width: 728px;
+    min-height: 280px; /* 広告が入る場所をあらかじめ確保 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.02); 
+    border-radius: 12px;
+    border: 1px dashed #ccc;
+}
+.ad-row::before {
+    content: "ADVERTISEMENT";
+    display: block;
+    font-size: 10px;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
 /* --- 銘柄図鑑・カードのレイアウト --- */
 .stock-grid {
     display: grid;
-    /* 画面幅に合わせて、自動で2列〜3列に調整する魔法の1行 */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
     margin-bottom: 40px;
 }
-
 .stock-card {
     background-color: #fff;
     border-radius: 15px;
@@ -69,12 +94,9 @@ h2 {
     display: flex;
     flex-direction: column;
     border-top: 5px solid #ccc;
-    text-align: left; /* 文字を左寄せに固定 */
+    text-align: left;
 }
-
-.stock-card:hover {
-    transform: translateY(-5px);
-}
+.stock-card:hover { transform: translateY(-5px); }
 
 /* カテゴリ別の色 */
 .card-jp { border-top-color: #ef9a9a; }
@@ -113,93 +135,59 @@ h2 {
     text-align: left;
 }
 
-/* 画像ギャラリーのスタイル */
-.photo-gallery {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 30px 0;
-}
-.photo-item {
-    flex: 1;
-    min-width: 280px;
-    max-width: 400px;
-}
+/* --- 画像ギャラリー --- */
+.photo-gallery { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin: 30px 0; }
+.photo-item { flex: 1; min-width: 280px; max-width: 400px; }
 .photo-item img {
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: zoom-in; /* 虫眼鏡アイコンに */
+    cursor: zoom-in;
+}
+.photo-item img:hover { transform: scale(1.03); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.caption { font-size: 0.85rem; color: #888; margin-top: 10px; text-align: left; }
+
+/* コレクション円形画像 */
+.collection-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 600px;
+    flex-wrap: wrap;
+}
+.collection-images img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.photo-item img:hover {
-    transform: scale(1.03); /* 少しだけ大きく */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-.caption {
-    font-size: 0.85rem;
-    color: #888;
-    margin-top: 10px;
-    text-align: left;
-}
-
-/* スマホ（画面幅600px以下）用の調整 */
-@media (max-width: 600px) {
-    /* 全体の余白を少し詰める */
-    .container {
-        padding: 15px;
-    }
-
-    /* ロゴとメニューをスッキリさせる */
-    header {
-        padding: 10px;
-        flex-direction: column; /* 縦並びに */
-        gap: 10px;
-    }
-    nav ul {
-        gap: 10px;
-        font-size: 0.8rem; /* メニューの文字を少し小さく */
-    }
-
-    /* 大きすぎる見出しを調整 */
-    h1 {
-        font-size: 1.4rem !important;
-        margin-bottom: 20px;
-    }
-    h2 {
-        font-size: 1.2rem;
-    }
-
-    /* グラフや画像が窮屈にならないように調整 */
-    .photo-gallery {
-        gap: 15px;
-    }
-    .photo-item {
-        min-width: 100%; /* スマホでは1枚ずつ縦に並べる */
-    }
-}
-/* ★追加：コレクション画像を横並びにする設定 */
-        .collection-images {
-            display: flex;
-            justify-content: center; /* 中央に寄せる */
-            gap: 20px;               /* 画像同士の間隔 */
-            margin: 40px auto;       /* 上下の余白 */
-            max-width: 600px;        /* 全体の最大幅 */
-            flex-wrap: wrap;         /* スマホでは縦並びにする */
-        }
-        .collection-images img {
-            width: 150px;            /* 画像の横幅 */
-            height: 150px;           /* 画像の縦幅（正方形にする場合） */
-            object-fit: cover;       /* 正方形に綺麗に収める */
-            border-radius: 50%;      /* 丸くする（四角が良い場合は削除OK） */
-            border: 5px solid #fff;  /* 白い枠線 */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 影をつけて立体的に */
-}
+/* アイコン調整 */
 .flask-icon {
-  width: 1.2em;   /* 文字より少し大きいくらいに自動調整 */
-  height: 1.2em;
-  vertical-align: middle; /* 文字の高さに合わせる */
-  margin-right: 8px;      /* 文字との間に少し隙間を作る */
+  width: 1.2em; height: 1.2em;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* チャート用 */
+.chart-wrapper { position: relative; width: 300px; height: 300px; margin: 40px auto; }
+.chart-center-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center; width: 100%; pointer-events: none;
+}
+.chart-value { font-size: 2.2rem; font-weight: bold; color: var(--accent-color); line-height: 1; }
+
+/* --- スマホ調整 --- */
+@media (max-width: 600px) {
+    .container { padding: 15px; }
+    header { padding: 10px; flex-direction: column; gap: 10px; }
+    nav ul { gap: 10px; font-size: 0.8rem; }
+    h1 { font-size: 1.4rem !important; margin-bottom: 20px; }
+    h2 { font-size: 1.2rem; }
+    .photo-item { min-width: 100%; }
+    .ad-row { min-height: 250px; }
 }
