@@ -57,19 +57,20 @@ section { padding: 60px 20px; text-align: center; }
 #research-floor { background-color: var(--bg-research); }
 #collection-floor { background-color: var(--bg-collection); }
 
-/* 🌟 広告用：グラフ干渉防止（固定高さ）設定 */
+/* 🌟 広告用：!importantによる強制固定 */
 .ad-row {
-    margin: 40px auto;
-    max-width: 728px;
-    height: 280px;      /* 🌟 min-heightから固定heightに変更 */
-    overflow: hidden;   /* 🌟 中身の揺れを外に漏らさない */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.02); 
-    border-radius: 12px;
-    border: 1px dashed #ccc;
+    margin: 40px auto !important;
+    max-width: 728px !important;
+    height: 280px !important;      /* 🌟 強制固定 */
+    min-height: 280px !important;  /* 🌟 重ねて強制 */
+    overflow: hidden !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: rgba(0, 0, 0, 0.02) !important; 
+    border-radius: 12px !important;
+    border: 1px dashed #ccc !important;
 }
 .ad-row::before {
     content: "ADVERTISEMENT";
@@ -174,8 +175,14 @@ section { padding: 60px 20px; text-align: center; }
   margin-right: 8px;
 }
 
-/* チャート用 */
-.chart-wrapper { position: relative; width: 300px; height: 300px; margin: 40px auto; }
+/* 🌟 チャート用：絶対的不動エリア */
+.chart-wrapper { 
+    position: relative; 
+    width: 300px !important; 
+    height: 300px !important; 
+    margin: 40px auto !important; 
+    overflow: hidden !important; 
+}
 .chart-center-text {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     text-align: center; width: 100%; pointer-events: none;
@@ -190,5 +197,5 @@ section { padding: 60px 20px; text-align: center; }
     h1 { font-size: 1.4rem !important; margin-bottom: 20px; }
     h2 { font-size: 1.2rem; }
     .photo-item { min-width: 100%; }
-    .ad-row { height: 250px; } /* 🌟 スマホも固定高さ */
+    .ad-row { height: 250px !important; min-height: 250px !important; }
 }
