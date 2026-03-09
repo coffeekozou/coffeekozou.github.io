@@ -57,11 +57,12 @@ section { padding: 60px 20px; text-align: center; }
 #research-floor { background-color: var(--bg-research); }
 #collection-floor { background-color: var(--bg-collection); }
 
-/* 🌟 広告用：ガタつき防止（CLS）対策 */
+/* 🌟 広告用：グラフ干渉防止（固定高さ）設定 */
 .ad-row {
     margin: 40px auto;
     max-width: 728px;
-    min-height: 280px; /* 広告が入る場所をあらかじめ確保 */
+    height: 280px;      /* 🌟 min-heightから固定heightに変更 */
+    overflow: hidden;   /* 🌟 中身の揺れを外に漏らさない */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,5 +190,5 @@ section { padding: 60px 20px; text-align: center; }
     h1 { font-size: 1.4rem !important; margin-bottom: 20px; }
     h2 { font-size: 1.2rem; }
     .photo-item { min-width: 100%; }
-    .ad-row { min-height: 250px; }
+    .ad-row { height: 250px; } /* 🌟 スマホも固定高さ */
 }
