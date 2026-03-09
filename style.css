@@ -2,20 +2,28 @@
 :root {
     --hero-height: 350px;
     --bg-investment: #f6f5ee; 
-    --bg-research: #eef2f5;   /* 🌟 新設：リサーチ用ブルーグレー */
+    --bg-research: #eef2f5;   
     --bg-collection: #dee2e2; 
     --text-color: #5d4037;
     --accent-color: #d35400;
 }
 
-body {
-    font-family: 'Zen Maru Gothic', sans-serif;
-    margin: 0; padding: 0;
-    color: var(--text-color);
-    background-color: var(--bg-investment);
+/* 🌟 拡大縮小ループを物理的に止める */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* 横揺れを強制停止 */
 }
 
-/* ヘッダー：すべてのページで共通 */
+body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-investment);
+    line-height: 1.6;
+}
+
+/* --- ヘッダー --- */
 header {
     background-color: #fff;
     padding: 15px 30px;
@@ -28,10 +36,10 @@ nav ul { list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; }
 nav a { text-decoration: none; color: #888; font-weight: bold; transition: 0.3s; }
 nav a:hover { color: var(--accent-color); }
 
-/* 共通フッター */
+/* --- フッター --- */
 footer { text-align: center; padding: 40px; background: #fff; color: #aaa; font-size: 0.8rem; }
 
-/* 共通ボタン（btnクラス） */
+/* --- 共通ボタン --- */
 .btn {
     background-color: #fff; color: #555; padding: 12px 40px;
     border-radius: 8px; border: 2px solid #ddd;
@@ -41,46 +49,48 @@ footer { text-align: center; padding: 40px; background: #fff; color: #aaa; font-
 }
 .btn:hover { transform: translateY(-2px); border-color: var(--accent-color); color: var(--accent-color); }
 
-/* --- 基本レイアウト --- */
-.container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-h2 {
-    font-size: 1.8rem; 
-    margin-bottom: 20px;
-    border-bottom: 3px dashed rgba(93, 64, 55, 0.2); 
-    display: inline-block; 
-    padding-bottom: 10px;
-}
-
-/* 🌟 各セクションの色分け */
+/* --- セクションレイアウト --- */
 section { padding: 60px 20px; text-align: center; }
 #investment-floor { background-color: var(--bg-investment); }
 #research-floor { background-color: var(--bg-research); }
 #collection-floor { background-color: var(--bg-collection); }
 
-/* 🌟 広告用：!importantによる強制固定 */
-.ad-row {
-    margin: 40px auto !important;
-    max-width: 728px !important;
-    height: 280px !important;      /* 🌟 強制固定 */
-    min-height: 280px !important;  /* 🌟 重ねて強制 */
-    overflow: hidden !important; 
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background-color: rgba(0, 0, 0, 0.02) !important; 
-    border-radius: 12px !important;
-    border: 1px dashed #ccc !important;
-}
-.ad-row::before {
-    content: "ADVERTISEMENT";
-    display: block;
-    font-size: 10px;
-    color: #bbb;
-    margin-bottom: 10px;
+h2 {
+    font-size: 1.8rem; margin-bottom: 20px;
+    border-bottom: 3px dashed rgba(93, 64, 55, 0.2); 
+    display: inline-block; padding-bottom: 10px;
 }
 
-/* --- 銘柄図鑑・カードのレイアウト --- */
+/* 🌟 広告枠：高さを「280px」にボルト止め */
+.ad-row {
+    margin: 40px auto;
+    max-width: 728px;
+    height: 280px; /* 固定 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.02); 
+    border-radius: 12px;
+    border: 1px dashed #ccc;
+    overflow: hidden;
+}
+.ad-row::before { content: "ADVERTISEMENT"; display: block; font-size: 10px; color: #bbb; margin-bottom: 10px; }
+
+/* 🌟 チャート：ここが拡大縮小の原因。サイズを厳格に固定 */
+.chart-wrapper { 
+    position: relative; 
+    width: 280px; /* スマホでもはみ出さないサイズ */
+    height: 280px; 
+    margin: 40px auto; 
+}
+.chart-center-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center; width: 100%; pointer-events: none;
+}
+.chart-value { font-size: 2rem; font-weight: bold; color: var(--accent-color); line-height: 1; }
+
+/* --- 銘柄図鑑・カードデザイン --- */
 .stock-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -99,103 +109,36 @@ section { padding: 60px 20px; text-align: center; }
     text-align: left;
 }
 .stock-card:hover { transform: translateY(-5px); }
-
-/* カテゴリ別の色 */
 .card-jp { border-top-color: #ef9a9a; }
 .card-us { border-top-color: #b39ddb; }
 .card-trust { border-top-color: #e67e22; }
-.card-gold { 
-    border-top: 5px solid #f1c40f; 
-    background: linear-gradient(to bottom, #ffffff, #fff9e6);
-}
+.card-gold { border-top: 5px solid #f1c40f; background: linear-gradient(to bottom, #ffffff, #fff9e6); }
 
 .ticker { font-size: 0.8rem; font-weight: bold; color: #aaa; margin-bottom: 5px; }
 .stock-name { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
 .tag { font-size: 0.75rem; background: #eee; padding: 2px 8px; border-radius: 10px; margin-right: 5px; }
 .comment { font-size: 0.9rem; margin: 15px 0; color: #666; flex-grow: 1; }
-.link-btn { text-align: right; text-decoration: none; font-size: 0.85rem; font-weight: bold; color: #5d4037; opacity: 0.6; }
-.link-btn:hover { opacity: 1; color: #d35400; }
 
-/* --- 金比較ページ（テーブル）のスタイル --- */
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background: #fff;
-}
-.comparison-table th, .comparison-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-}
-.experience-box {
-    background-color: #fff9e6;
-    border-left: 5px solid #f1c40f;
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 5px;
-    text-align: left;
-}
+/* --- 金比較ページ --- */
+.comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #fff; }
+.comparison-table th, .comparison-table td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+.experience-box { background-color: #fff9e6; border-left: 5px solid #f1c40f; padding: 20px; margin: 30px 0; border-radius: 5px; text-align: left; }
 
-/* --- 画像ギャラリー --- */
+/* --- ギャラリー --- */
 .photo-gallery { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin: 30px 0; }
-.photo-item { flex: 1; min-width: 280px; max-width: 400px; }
-.photo-item img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: zoom-in;
-}
-.photo-item img:hover { transform: scale(1.03); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-.caption { font-size: 0.85rem; color: #888; margin-top: 10px; text-align: left; }
+.photo-item { flex: 1; min-width: 250px; max-width: 400px; }
+.photo-item img { width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.4s ease; cursor: zoom-in; }
+.photo-item img:hover { transform: scale(1.03); }
 
-/* コレクション円形画像 */
-.collection-images {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 40px auto;
-    max-width: 600px;
-    flex-wrap: wrap;
-}
-.collection-images img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
+/* --- コレクション円形画像 --- */
+.collection-images { display: flex; justify-content: center; gap: 20px; margin: 40px auto; flex-wrap: wrap; }
+.collection-images img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-/* アイコン調整 */
-.flask-icon {
-  width: 1.2em; height: 1.2em;
-  vertical-align: middle;
-  margin-right: 8px;
-}
-
-/* 🌟 チャート用：絶対的不動エリア */
-.chart-wrapper { 
-    position: relative; 
-    width: 300px !important; 
-    height: 300px !important; 
-    margin: 40px auto !important; 
-    overflow: hidden !important; 
-}
-.chart-center-text {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    text-align: center; width: 100%; pointer-events: none;
-}
-.chart-value { font-size: 2.2rem; font-weight: bold; color: var(--accent-color); line-height: 1; }
-
-/* --- スマホ調整 --- */
+/* --- スマホ調整：横揺れを絶対に許さない --- */
 @media (max-width: 600px) {
-    .container { padding: 15px; }
     header { padding: 10px; flex-direction: column; gap: 10px; }
     nav ul { gap: 10px; font-size: 0.8rem; }
-    h1 { font-size: 1.4rem !important; margin-bottom: 20px; }
-    h2 { font-size: 1.2rem; }
-    .photo-item { min-width: 100%; }
-    .ad-row { height: 250px !important; min-height: 250px !important; }
+    h1 { font-size: 1.4rem !important; }
+    .ad-row { height: 250px; }
+    .chart-wrapper { width: 240px; height: 240px; }
 }
