@@ -1,7 +1,8 @@
 /* 🎨 共通設定パレット */
 :root {
     --hero-height: 350px;
-    --bg-investment: #f6f5ee; 
+    --bg-investment: #fff5ee; 
+    --bg-stocks: #f6f5ee; 
     --bg-collection: #dee2e2; 
     --text-color: #5d4037;
     --accent-color: #d35400;
