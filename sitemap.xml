@@ -36,11 +36,11 @@
   </url>
   <url>
     <loc>https://www.kozou-lab.com/collection/satochan.html</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.kozou-lab.com/collection/pyonchan.html</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.kozou-lab.com/collection/books.html</loc>
@@ -68,6 +68,10 @@
   </url>
   <url>
     <loc>https://www.kozou-lab.com/collection/others_6.html</loc>
+    <priority>0.7</priority>
+  </url>
+    <url>
+    <loc>https://www.kozou-lab.com/collection/others_7.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
