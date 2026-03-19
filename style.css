@@ -193,21 +193,21 @@ h2 {
     }
 }
 /* ★追加：コレクション画像を横並びにする設定 */
-        .collection-images {
-            display: flex;
-            justify-content: center; /* 中央に寄せる */
-            gap: 20px;               /* 画像同士の間隔 */
-            margin: 40px auto;       /* 上下の余白 */
-            max-width: 600px;        /* 全体の最大幅 */
-            flex-wrap: wrap;         /* スマホでは縦並びにする */
+.collection-images {
+        display: flex;
+        justify-content: center; /* 中央に寄せる */
+        gap: 20px;               /* 画像同士の間隔 */
+        margin: 40px auto;       /* 上下の余白 */
+        max-width: 600px;        /* 全体の最大幅 */
+        flex-wrap: wrap;         /* スマホでは縦並びにする */
         }
-        .collection-images img {
-            width: 150px;            /* 画像の横幅 */
-            height: 150px;           /* 画像の縦幅（正方形にする場合） */
-            object-fit: cover;       /* 正方形に綺麗に収める */
-            border-radius: 50%;      /* 丸くする（四角が良い場合は削除OK） */
-            border: 5px solid #fff;  /* 白い枠線 */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 影をつけて立体的に */
+.collection-images img {
+        width: 150px;            /* 画像の横幅 */
+        height: 150px;           /* 画像の縦幅（正方形にする場合） */
+        object-fit: cover;       /* 正方形に綺麗に収める */
+        border-radius: 50%;      /* 丸くする（四角が良い場合は削除OK） */
+        border: 5px solid #fff;  /* 白い枠線 */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 影をつけて立体的に */
 }
 .flask-icon {
   width: 1.2em;   /* 文字より少し大きいくらいに自動調整 */
@@ -215,3 +215,36 @@ h2 {
   vertical-align: middle; /* 文字の高さに合わせる */
   margin-right: 8px;      /* 文字との間に少し隙間を作る */
 }
+
+/* 🏛️ 銘柄図鑑・本文エリア専用：ヘルベチカの精神を注入 */
+
+/* 1. .container（本文エリア）内のすべての文字を新しいゴシックに変更 */
+/* !important を使うことで、HTML内に直接書かれた丸ゴシックを強制的に上書きします */
+.container, 
+.container * {
+    font-family: 'Inter', 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif !important;
+}
+
+/* 2. 銘柄コード（Ticker）をより鋭く、知的に見せる微調整 */
+.ticker {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif !important; /* 英字専用 */
+    letter-spacing: 0.05em; /* わずかな字間で「高級感」を出す */
+    opacity: 0.8;
+}
+
+/* 3. 投資メモや解説の「読みやすさ」を向上 */
+.container p, 
+.profile-section p, 
+.experience-box p {
+    line-height: 1.8; /* 行間を広げて「黄色い花の庭」のような余白を */
+    letter-spacing: 0.02em;
+}
+
+/* 4. 見出し（h1, h2, h3）の力強さを整える */
+.container h1, 
+.container h2, 
+.container h3 {
+    font-weight: 700 !important;
+    color: #333;
+}
+/* 🏛️ 銘柄図鑑・本文エリア専用：ヘルベチカの精神を注入 */
