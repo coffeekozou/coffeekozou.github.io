@@ -216,35 +216,32 @@ h2 {
   margin-right: 8px;      /* 文字との間に少し隙間を作る */
 }
 
-/* 🏛️ 銘柄図鑑・本文エリア専用：ヘルベチカの精神を注入 */
+/* --- 投資LAB：本文エリアのタイポグラフィ（整理済み） --- */
 
-/* 1. .container（本文エリア）内のすべての文字を新しいゴシックに変更 */
-/* !important を使うことで、HTML内に直接書かれた丸ゴシックを強制的に上書きします */
+/* 1. 本文エリア内の全要素を「継承」を使って一括変更（インラインスタイルも強制上書き） */
+.hero, 
+section,
 .container, 
 .container * {
-    font-family: 'Inter', 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif !important;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif !important;
 }
 
-/* 2. 銘柄コード（Ticker）をより鋭く、知的に見せる微調整 */
+/* 2. 銘柄コード（Ticker）のみ、わずかな字間調整でキレを出す */
 .ticker {
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif !important; /* 英字専用 */
-    letter-spacing: 0.05em; /* わずかな字間で「高級感」を出す */
+    letter-spacing: 0.05em;
     opacity: 0.8;
 }
 
-/* 3. 投資メモや解説の「読みやすさ」を向上 */
-.container p, 
-.profile-section p, 
-.experience-box p {
-    line-height: 1.8; /* 行間を広げて「黄色い花の庭」のような余白を */
+/* 3. 記事全体の「読みやすさ」を共通設定（行間と字間） */
+.container p {
+    line-height: 1.8;
     letter-spacing: 0.02em;
+    margin-bottom: 1.5em; /* 段落ごとの余白も統一 */
 }
 
-/* 4. 見出し（h1, h2, h3）の力強さを整える */
+/* 4. 見出しの太さを統一 */
 .container h1, 
 .container h2, 
 .container h3 {
     font-weight: 700 !important;
-    color: #333;
 }
-/* 🏛️ 銘柄図鑑・本文エリア専用：ヘルベチカの精神を注入 */
