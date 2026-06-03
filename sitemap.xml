@@ -5,32 +5,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.kozou-lab.com/stocks.html</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.kozou-lab.com/gold-comparison.html</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.kozou-lab.com/pltr-analysis.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.kozou-lab.com/heavy-industry-analysis.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.kozou-lab.com/sbi-shinsei-analysis.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.kozou-lab.com/sanrio-analysis.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
     <loc>https://www.kozou-lab.com/collection/index.html</loc>
     <priority>0.8</priority>
   </url>
@@ -82,9 +56,10 @@
     <loc>https://www.kozou-lab.com/collection/others_9.html</loc>
     <priority>0.8</priority>
   </url>
-
-  
-  
+  <url>
+    <loc>https://www.kozou-lab.com/collection/others_10.html</loc>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://www.kozou-lab.com/collection/modern-figures.html</loc>
     <priority>0.7</priority>
