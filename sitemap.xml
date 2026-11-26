@@ -68,6 +68,22 @@
     <loc>https://www.kozou-lab.com/collection/modern-figures-vag.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.kozou-lab.com/collection-English/index.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kozou-lab.com/collection-English/satochan.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kozou-lab.com/collection-English/pyonchan.html</loc>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://www.kozou-lab.com/collection-English/others_1.html</loc>
+    <priority>0.8</priority>
+  </url>
 
   <url>
     <loc>https://www.kozou-lab.com/about.html</loc>
